@@ -22,9 +22,9 @@ def print_time():
 
     with open(path, 'a+') as file:
 
-        file.write(f'time = {dt}: server temp = {temp}')
+        file.write(f'time = {dt}: ')
         for i, sensor in enumerate(temp):
-            file.write(f'sensor {sensor.label}: {sensor.current}')
+            file.write(f'{i}-sensor {sensor.label}-{sensor.current}')
 
         file.write('\n')
 
