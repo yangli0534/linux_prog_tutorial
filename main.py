@@ -24,7 +24,7 @@ def print_time():
 
         file.write(f'time = {dt}: ')
         for i, sensor in enumerate(temp):
-            file.write(f'{i}-sensor {sensor.label}-{sensor.current}')
+            file.write(f'{i}-sensor {sensor.label}-Temp {sensor.current}; ')
 
         file.write('\n')
 
