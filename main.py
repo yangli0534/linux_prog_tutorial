@@ -21,7 +21,7 @@ def print_time():
 
     with open(path, 'a+') as file:
 
-        file.write(f'time = {dt}\n: {temp[0].current}, {temp[1].current}, {temp[2].current}, {temp[3].current}')
+        file.write(f'time = {dt}: {temp[0].current}, {temp[1].current}, {temp[2].current}, {temp[3].current}\n')
 
 
 
