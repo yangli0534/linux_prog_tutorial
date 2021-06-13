@@ -15,7 +15,7 @@ def print_time():
     dt = datetime.datetime.now()
     dt = dt.strftime("%H:%m:%S %d/%m/%y")
     print(f'time = {dt}')  # Press ⌘F8 to toggle the breakpoint.
-    with open(f'{current_path}/log.txt', 'a') as file:
+    with open(f'{current_path}/log.txt', 'a+') as file:
         file.write(f'time = {dt}\n')
 
 
