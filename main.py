@@ -9,13 +9,15 @@ import datetime
 import os
 
 current_path = os.path.dirname(__file__)
-
+path = r'//home//leon//code//linux_prog_tutorial//log.txt'
+print(path)
 def print_time():
     # Use a breakpoint in the code line below to debug your script.
     dt = datetime.datetime.now()
-    dt = dt.strftime("%H:%m:%S %d/%m/%y")
+    dt = dt.strftime("%H:%M:%S %d/%m/%y")
     print(f'time = {dt}')  # Press ⌘F8 to toggle the breakpoint.
-    with open(f'{current_path}/log.txt', 'a+') as file:
+    with open(path, 'a+') as file:
+
         file.write(f'time = {dt}\n')
 
 
