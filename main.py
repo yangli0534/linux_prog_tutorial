@@ -7,6 +7,7 @@
 import time
 import datetime
 import os
+import psutil
 
 current_path = os.path.dirname(__file__)
 path = r'//home//leon//code//linux_prog_tutorial//log.txt'
@@ -16,9 +17,11 @@ def print_time():
     dt = datetime.datetime.now()
     dt = dt.strftime("%H:%M:%S %d/%m/%y")
     print(f'time = {dt}')  # Press ⌘F8 to toggle the breakpoint.
+    temp = psutil.sensors_temperatures()['coretemp']
+
     with open(path, 'a+') as file:
 
-        file.write(f'time = {dt}\n')
+        file.write(f'time = {dt}\n: {temp[0].current}, {temp[1].current}, {temp[2].current}, {temp[3].current}')
 
 
 
