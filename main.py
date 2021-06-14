@@ -8,11 +8,27 @@ import time
 import datetime
 import os
 import psutil
+from getpass import getpass
+from mysql.connector import connect, Error
 
 current_path = os.path.dirname(__file__)
 path = r'//home//leon//code//linux_prog_tutorial//log.txt'
 print(path)
+
+
 def print_time():
+    try:
+        connection = connect(
+            host="10.10.10.101",
+            user="root",
+            password="oppaha89@A",
+            database="sql_temperature",
+            auth_plugin="mysql_native_password"
+        )
+    except Error as e:
+        print(e)
+        print('failed')
+
     # Use a breakpoint in the code line below to debug your script.
     dt = datetime.datetime.now()
     dt = dt.strftime("%H:%M:%S %d/%m/%y")
@@ -25,8 +41,36 @@ def print_time():
         file.write(f'time = {dt}: ')
         for i, sensor in enumerate(temp):
             file.write(f'{i}-sensor {sensor.label}-Temp {sensor.current}; ')
+            TestRecordInfo = {'Time': dt, 'Sensor': sensor.label, 'Temperature': sensor.current}
+            update_query = """
+                    INSERT INTO
+                    `temp_tbl`(
+                        `Time`,
+                        `Sensor`,
+                        `Temperature`
+
+                    )
+                    VALUES(
+                            '%s', '%s', %f
+                        );
+                    """ % (
+                # Sn, RunMode, StartTime, MpgName, MpgTestTime, AppRev, MpName, MpTestTime, LimitDown, LimitUp, Result
+                TestRecordInfo['Time'], TestRecordInfo['Sensor'], TestRecordInfo['Temperature']
+            )
+            try:
+                with connection.cursor() as cursor:
+                    for result in cursor.execute(update_query, multi=True):
+                        if result.with_rows:
+                            print(result.fetchall())
+                    connection.commit()
+                    # time.sleep(1)
+            except Error as e:
+                # print('sql operation failed!')
+                print(e)
 
         file.write('\n')
+
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
