@@ -11,10 +11,9 @@ import psutil
 from getpass import getpass
 from mysql.connector import connect, Error
 
-current_path = os.path.dirname(__file__)
-path = r'//home//leon//code//linux_prog_tutorial//log.txt'
-print(path)
-
+current_path = os.path.dirname(os.path.realpath(__file__))
+#print(f'current path = {current_path}')
+path =  current_path + '/log.txt'
 
 def print_time():
     try:
