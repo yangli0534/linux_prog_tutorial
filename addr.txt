@@ -1,0 +1,100 @@
+[31mScanning for devices...[0m
+    Device (new): [37mf3:33:ef:7b:91:94[0m (random), -79 dBm 
+	Flags: <06>
+	Complete 16b Services: <0000fe07-0000-1000-8000-00805f9b34fb>
+	Manufacturer: <a705051001000000000000021a00ca>
+	Appearance: <0000>
+	Tx Power: <00>
+	Complete Local Name: '[36mB4E55326DFF833AEE9[0m'
+    Device (new): [37m41:7c:ed:63:d5:ff[0m (random), -64 dBm 
+	Flags: <02>
+	Manufacturer: <8f032211101101017ffa023463626585ee0800060710>
+	Complete 16b Services: <0000fdaa-0000-1000-8000-00805f9b34fb>
+    Device (new): [37m52:45:99:49:21:d8[0m (random), -71 dBm 
+	Flags: <06>
+	Manufacturer: <4c001005431cceeeb0>
+    Device (new): [37me7:2e:01:91:69:07[0m (public), -31 dBm 
+	Flags: <06>
+	Incomplete 16b Services: <0000181a-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <95fe70205b0469076991012ee7090a10013a>
+	Complete 16b Services: <0000fef5-0000-1000-8000-00805f9b34fb>
+	Complete Local Name: '[36mLYWSD02[0m'
+    Device (new): [37m0e:16:55:c8:5c:bb[0m (random), -54 dBm (not connectable)
+	Flags: <1a>
+	Manufacturer: <4c00090603160a0a0a8a>
+    Device (new): [37m04:cf:8c:9b:02:d8[0m (public), -78 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a10010200d7029b8ccf0481>
+	Complete Local Name: '[36mmi_mtk[0m'
+    Device (new): [37m04:cf:8c:9b:b0:09[0m (public), -68 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a1058010008b09b8ccf0481>
+	Complete Local Name: '[36mmi_mtk[0m'
+    Device (new): [37m6a:ee:02:80:fd:f7[0m (random), -64 dBm 
+	Flags: <1a>
+	Tx Power: <18>
+	Manufacturer: <4c0010050198c76e6b>
+    Device (new): [37m90:dd:5d:9c:aa:6c[0m (public), -56 dBm 
+	Flags: <1a>
+	Tx Power: <0c>
+	Manufacturer: <4c0010050314678b81>
+    Device (new): [37m5c:e5:0c:2d:d3:e4[0m (public), -60 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a101f0000e2d32d0ce55cd8>
+    Device (new): [37m7c:49:eb:64:56:70[0m (public), -75 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a103903006e5664eb497cd8>
+    Device (new): [37m04:cf:8c:86:44:b9[0m (public), -71 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a10380300b844868ccf0481>
+    Device (update): [37m41:7c:ed:63:d5:ff[0m (random), -63 dBm (not connectable)
+	Flags: <02>
+	Manufacturer: <8f032211101101017ffa023463626585ee0800060710>
+	Complete 16b Services: <0000fdaa-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <aafd010e01000250d2f5e8bbfe00e7dd5648>
+    Device (new): [37m44:6f:3a:aa:aa:f2[0m (random), -73 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+    Device (new): [37m6d:16:4e:8c:9b:75[0m (random), -69 dBm 
+	Flags: <02>
+	Complete 128b Services: <cbbfe0e1-f7f3-4206-84e0-84cbb3d09dfc>
+    Device (update): [37m04:cf:8c:86:44:b9[0m (public), -71 dBm (not connectable)
+	Flags: <06>
+	Manufacturer: <8f030a10380300b844868ccf0481>
+	Complete Local Name: '[36mmi_mtk[0m'
+    Device (new): [37m45:d9:c2:2a:e5:78[0m (random), -63 dBm 
+	Flags: <1a>
+	Tx Power: <08>
+	Manufacturer: <4c0010062a1e9d8c0c3e>
+    Device (update): [37m44:6f:3a:aa:aa:f2[0m (random), -68 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+	Manufacturer: <e0000a7bca503f50>
+    Device (new): [37m04:cf:8c:9b:9b:24[0m (public), -84 dBm 
+	Flags: <06>
+	Manufacturer: <8f030a10580100239b9b8ccf0481>
+    Device (new): [37m58:41:4d:92:fc:2b[0m (random), -82 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+    Device (new): [37mca:f9:c6:d3:a6:d4[0m (random), -76 dBm 
+	Flags: <06>
+	16b Service Data: <95fe10441a03f7d4a6d3c6f9ca>
+    Device (update): [37m58:41:4d:92:fc:2b[0m (random), -78 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+	Manufacturer: <e0000a35ca65d1f9>
+    Device (new): [37m65:38:b6:c4:b5:63[0m (random), -69 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+    Device (update): [37m04:cf:8c:9b:9b:24[0m (public), -82 dBm (not connectable)
+	Flags: <06>
+	Manufacturer: <8f030a10580100239b9b8ccf0481>
+	Complete Local Name: '[36mmi_mtk[0m'
+    Device (update): [37m65:38:b6:c4:b5:63[0m (random), -70 dBm (not connectable)
+	Complete 16b Services: <0000fe9f-0000-1000-8000-00805f9b34fb>
+	16b Service Data: <9ffe0000000000000000000000000000000000000000>
+	Manufacturer: <e0000a27ca77c6c8>
+    Device (new): [37m62:83:ed:0b:3d:f9[0m (random), -88 dBm 
+	Flags: <1a>
+	Tx Power: <08>
+	Manufacturer: <4c001005711c333ab8>
