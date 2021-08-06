@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 import time
 import datetime
@@ -28,7 +29,7 @@ def create_client():
 
 
 
-mac = 'e7:2e:01:91:69:07'
+mac = '0e:16:55:c8:5c:bb'
 
 
 
@@ -48,7 +49,6 @@ def print_time():
     # Use a breakpoint in the code line below to debug your script.
     dt = datetime.datetime.now()
     dt = dt.strftime("%H:%M:%S %d/%m/%y")
-    #print(f'time = {dt}')  # Press ⌘F8 to toggle the breakpoint.
     #temp = psutil.sensors_temperatures()['scpi_sensors']
     #temp = max(temp[0].current, temp[1].current, temp[2].current, temp[3].current)
     client = create_client()
@@ -61,8 +61,8 @@ def print_time():
 
             file.write(f'time = {dt}: ')
             #for i, sensor in enumerate(temperature):
-            file.write(f'{0}-sensor-Balcony -Temp {temperature}-Humidity:{humidity}; ')
-            TestRecordInfo = {'Time': dt, 'Sensor': 'Balcony', 'Temperature': temperature}
+            file.write(f'{0}-sensor-Living Room -Temp {temperature}-Humidity:{humidity}; ')
+            TestRecordInfo = {'Time': dt, 'Sensor': 'Living room', 'Temperature': temperature}
             update_query = """
                     INSERT INTO
                     `temp_tbl`(

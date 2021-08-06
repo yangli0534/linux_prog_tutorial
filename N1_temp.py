@@ -21,8 +21,8 @@ path =  current_path + '/log.txt'
 def print_time():
     try:
         connection = connect(
-            host="10.10.10.101",
-            user="root",
+            host="10.10.10.119",
+            user="leon",
             password="oppaha89@A",
             database="sql_temperature",
             auth_plugin="mysql_native_password"
