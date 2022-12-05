@@ -1,15 +1,18 @@
 #!/usr/bin/python
 
+"""
+Created on Mon Dec  5 23:22:56 2022
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
+@author: Leon
+"""
 import time
 import datetime
 import os
 import psutil
 from getpass import getpass
 from mysql.connector import connect, Error
+
+import Book
 
 class BookLibrary():
     def __init__(self, ip, user, password, port=3306, database='book'):
@@ -36,7 +39,9 @@ class BookLibrary():
                         #print(tmp)
 
                 self.connection.commit()
-                return tmp
+                # TODO: bug TypeError: 'module' object is not callable
+                book = Book(info=tmp[0])
+                return book
                 # time.sleep(1)
         except Error as e:
             # print('sql operation failed!')
@@ -44,5 +49,5 @@ class BookLibrary():
 
 if __name__ == '__main__':
     lib = BookLibrary(ip='10.10.10.119', user='leon', password='oppaha89@A')
-    info = lib.query_with_id(id=589518)
-    print(info)
+    book = lib.query_with_id(id=589518)
+    print(book.title)
