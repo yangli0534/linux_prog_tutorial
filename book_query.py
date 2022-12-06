@@ -12,33 +12,28 @@ Created on Mon Dec  5 23:08:56 2022
 
 import time
 import datetime
-import os
-import psutil
-from getpass import getpass
-from mysql.connector import connect, Error
+import os,sys
+#import psutil
+from BookLibrary import BookLibrary
+from slugify import slugify
 
-try:
-    connection = connect(
-        host="10.10.10.119",
-        user="leon",
-        password="oppaha89@A",
-        database="book",
-        auth_plugin="mysql_native_password"
-    )
-except Error as e:
-    print(e)
-    print('failed')
+lib = BookLibrary(host='10.10.10.250', user='root', database='library', password='oppaha89@A')
 
-query = """ SELECT * FROM book.books WHERE language = 'Chinese' LIMIT 10;"""
+directory = '/volume2/library/books/pilimi-zlib-120000-419999/'
+dest = '/volume2/library/book_lib'
+N = 20
+i = 0
+for filename in os.listdir(directory):
+    f = os.path.join(directory, filename)
 
-try:
-    with connection.cursor() as cursor:
-        for result in cursor.execute(query, multi=True):
-            if result.with_rows:
-                tmp = result.fetchall()
-                print(tmp)
-        connection.commit()
-        # time.sleep(1)
-except Error as e:
-    # print('sql operation failed!')
-    print(e)
+    # checking if it is a file
+    i = i + 1
+    if os.path.isfile(f) and i < N:
+
+        book = lib.query_with_id(id=int(filename))
+        print(f'filename = {filename}, book title = {book.title} and author = {book.author}')
+        new_name = slugify(f'{book.title}_{book.author}', max_length=80, word_boundary=False, separator=' ',)
+
+        new_name = f'{new_name}-{filename}.{book.extension}'
+        f_dst = os.path.join(dest, new_name)
+        os.link(f, f_dst)

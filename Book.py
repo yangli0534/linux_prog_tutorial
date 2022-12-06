@@ -29,6 +29,20 @@ class Book():
             return self.book[0][9]
 
     @property
+    def extension(self):
+        if self.book[0] is None:
+            return None
+        else:
+            return self.book[0][3]
+
+    @property
+    def language(self):
+        if self.book[0] is None:
+            return None
+        else:
+            return self.book[0][11]
+
+    @property
     def isbn(self):
         if self.book[1] is None:
             return None

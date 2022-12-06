@@ -15,10 +15,10 @@ from mysql.connector import connect, Error
 from Book import Book
 
 class BookLibrary():
-    def __init__(self, ip, user, password, port=3306, database='book'):
+    def __init__(self, host, user, password, port=3306, database='book'):
         try:
             self.connection = connect(
-                host=ip,
+                host=host,
                 user=user,
                 password=password,
                 database=database,
@@ -27,10 +27,11 @@ class BookLibrary():
         except Error as e:
             print(e)
             print('failed')
+        self.database = database
 
     def query_with_id(self, id):
-        query = f""" SELECT * FROM book.books WHERE zlibrary_id = {id};"""
-        query_isbn = f""" SELECT * FROM book.isbn WHERE zlibrary_id = {id};"""
+        query = f""" SELECT * FROM {self.database}.books WHERE zlibrary_id = {id};"""
+        query_isbn = f""" SELECT * FROM {self.database}.isbn WHERE zlibrary_id = {id};"""
         try:
             with self.connection.cursor() as cursor:
                 for result in cursor.execute(query, multi=True):
@@ -71,11 +72,14 @@ class BookLibrary():
             return book
 
 if __name__ == '__main__':
-    lib = BookLibrary(ip='172.16.1.35', user='root', password='leonfromzillnk')
+    #lib = BookLibrary(ip='172.16.1.35', user='root', password='leonfromzillnk')
+    lib = BookLibrary(host='10.10.10.250', user='root', database='library', password='oppaha89@A')
     #book = lib.query_with_id(id=18419)
-    for i in range(177, 200):
+    for i in range(2030000, 2030200):
         book = lib.query_with_id(id=i)
         # print(book.title)
         # print(book.author)
         # print(book.isbn)
-        print(f'zlibrary id = {i}, book name = {book.title}, book author = {book.author}, isbn = {book.isbn}')
+        if book.book[0] is not None:
+            print(f'zlibrary id = {i}, book name = {book.title}, book author = {book.author}, extersion '
+                  f'= {book.extension}, language = {book.language}, isbn = {book.isbn}')
