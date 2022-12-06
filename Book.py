@@ -9,18 +9,31 @@ Created on Mon Dec  5 23:22:56 2022
 
 
 class Book():
-    def __init__(self, info: tuple):
+    def __init__(self, info: tuple, isbn: tuple):
         # if type(info) != tuple:
         #     raise TypeError
-        self.book = info
+        self.book = (info, isbn)
 
     @property
     def title(self):
-        return self.book[8]
+        if self.book[0] is None:
+            return None
+        else:
+            return self.book[0][8]
 
     @property
     def author(self):
-        return self.book[9]
+        if self.book[0] is None:
+            return None
+        else:
+            return self.book[0][9]
+
+    @property
+    def isbn(self):
+        if self.book[1] is None:
+            return None
+        else:
+            return self.book[1][1]
 
 if __name__ == '__main__':
     info =  (589518,
